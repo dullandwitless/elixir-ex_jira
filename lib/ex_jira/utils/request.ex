@@ -112,7 +112,7 @@ defmodule ExJira.Request do
 
     case httpotion_request(jira_client(), method, url, payload,
            timeout: jira_timeout(),
-           headers: ["Content-Type": "application/json", Authorization: auth]
+           headers: ["Accept": "application/json", Authorization: auth]
          ) do
       %HTTPotion.ErrorResponse{message: message} ->
         {:error, message}
