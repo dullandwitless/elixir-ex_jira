@@ -127,7 +127,7 @@ defmodule ExJira.Request do
         Poison.decode(body)
 
       %HTTPotion.Response{headers: %{hdrs: %{"content-type" => content_type}}} ->
-        {:error, "Invalid content-type returned: #{content_type}"}
+        {:error, "Invalid content-type returned: #{content_type}, response: #{body}"}
     end
   end
 
